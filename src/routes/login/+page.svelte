@@ -1,3 +1,13 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	let userRef: HTMLInputElement;
+
+	onMount(() => {
+		userRef.focus();
+	});
+</script>
+
 <div
 	class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-800 to-indigo-900"
 >
@@ -11,6 +21,7 @@
 		<div class="flex flex-col min-w-72 px-4 mb-4">
 			<div class="relative w-full min-w-[200px] h-10 mb-4">
 				<input
+					bind:this={userRef}
 					id="username"
 					name="username"
 					type="text"
@@ -35,12 +46,11 @@
 					>Password
 				</label>
 			</div>
-			<button
+			<input
 				type="submit"
+				value="Masuk"
 				class="select-none rounded bg-blue-gray-500 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-gray-500/20 transition-all hover:shadow-lg hover:shadow-blue-gray-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-			>
-				Masuk
-			</button>
+			/>
 		</div>
 	</form>
 </div>
